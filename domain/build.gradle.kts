@@ -1,42 +1,32 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-//plugins {
-//    id("org.springframework.boot") version "2.6.5"
-//    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-//    kotlin("jvm") version "1.6.10"
-//    kotlin("plugin.spring") version "1.6.10"
-//    kotlin("plugin.jpa") version "1.6.10"
-//    id("java")
-//}
+// 루트 모듈에서 plugin 버전지정 하위모듈에선 버전지정 X
 
-group = "com.example"
-version = "0.0.1-SNAPSHOT"
-//java.sourceCompatibility = JavaVersion.VERSION_11
+plugins {
+    id("org.springframework.boot")
+    id("io.spring.dependency-management")
+    kotlin("jvm")
+    kotlin("plugin.spring")
+    kotlin("plugin.jpa")
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-//    implementation(project(":library"))
-//    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
-//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-//    implementation("org.springframework.boot:spring-boot-starter-jdbc")
-//    implementation("org.springframework.boot:spring-boot-starter-web")
-//    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-//    implementation("org.jetbrains.kotlin:kotlin-reflect")
-//    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//    runtimeOnly("com.h2database:h2")
-//    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-data-jdbc:2.6.5")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.5")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.5")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.6.5")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:2.1.210")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    runtimeOnly("com.h2database:h2:2.1.210")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.6.5")
 }
-
-//bootJar {
-//    enabled = false
-//}
-//
-//jar {
-//    enabled = true
-//}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
