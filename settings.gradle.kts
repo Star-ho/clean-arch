@@ -1,3 +1,3 @@
-rootProject.name = "dreamstore"
+rootProject.name = "dreamStore"
 
-include("domain","application")
+include("domain","application","common")

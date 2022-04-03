@@ -12,11 +12,20 @@ plugins {
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 
+allOpen {
+    annotation("javax.persistence.Entity")
+}
+
+noArg {
+    annotation("javax.persistence.Entity")
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation(project(":common"))
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc:2.6.5")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.5")
     implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.5")
