@@ -1,10 +1,10 @@
-package com.example.application
+package com.dreamStore.domain
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class ApplicationTests {
+class DreamstoreApplicationTests {
 
     @Test
     fun contextLoads() {

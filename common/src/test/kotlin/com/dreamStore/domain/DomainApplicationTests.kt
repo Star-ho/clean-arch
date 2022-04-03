@@ -1,4 +1,4 @@
-package com.example.domain
+package com.dreamStore.domain
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
