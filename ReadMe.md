@@ -10,7 +10,6 @@
 
 
 ## 개발
-- swagger 작성
 - 입력값 validation
 - Auth로 접근제어
 - stateless, JWT

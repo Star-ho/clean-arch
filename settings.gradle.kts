@@ -1,3 +1,7 @@
 rootProject.name = "dreamStore"
 
-include("domain","application","common")
+include("common",
+        "domain","domain:product",
+        "api","api:product",
+        "data", "data:product",
+        "usecase","usecase:product")
