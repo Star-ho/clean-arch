@@ -1,3 +1,7 @@
+# Multimodule clean architecture
+
+![architecture](./arch.PNG)
+
 # 요구사항
 
 ## 설계
