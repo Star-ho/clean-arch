@@ -1,8 +1,8 @@
-package com.dreamStore.domain.product
+package com.dreamStore.domain.member
 
-import com.dreamStore.domain.product.adaptor.out.MemberRepositoryAdaptor
-import com.dreamStore.domain.product.dto.CreateMemberDto
-import com.dreamStore.domain.product.dto.MemberDTO
+import com.dreamStore.domain.member.adaptor.out.MemberRepositoryAdaptor
+import com.dreamStore.domain.member.dto.CreateMemberDto
+import com.dreamStore.domain.member.dto.MemberDTO
 import org.springframework.stereotype.Component
 
 @Component
