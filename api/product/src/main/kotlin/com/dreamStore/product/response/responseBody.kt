@@ -1,4 +1,4 @@
-package com.dreamStore.product.responseDTO
+package com.dreamStore.product.response
 
 import com.dreamStore.domain.product.dto.ProductDTO
 
