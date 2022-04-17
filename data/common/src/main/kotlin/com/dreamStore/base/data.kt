@@ -1,6 +1,5 @@
 package com.dreamStore.base
 
-import java.time.LocalDate
 import java.time.LocalDateTime
 import javax.persistence.Column
 import javax.persistence.MappedSuperclass
