@@ -1,8 +1,8 @@
 package com.dreamStore.domain.member.data
 
 import com.dreamStore.base.CommonEntity
-import com.dreamStore.domain.product.dto.CreateMemberDto
-import com.dreamStore.domain.product.dto.MemberDTO
+import com.dreamStore.domain.member.dto.CreateMemberDto
+import com.dreamStore.domain.member.dto.MemberDTO
 import javax.persistence.*
 
 @Entity
@@ -22,7 +22,7 @@ class MemberData (
     constructor(createMemberDto: CreateMemberDto):this(createMemberDto.memberId,createMemberDto.password,
                                                     createMemberDto.email)
 
-    fun toDTO():MemberDTO{
+    fun toDTO(): MemberDTO {
         return MemberDTO(id, memberId, password, email)
     }
 }
