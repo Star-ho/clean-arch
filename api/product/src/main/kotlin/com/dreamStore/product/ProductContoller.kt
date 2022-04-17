@@ -1,8 +1,8 @@
 package com.dreamStore.product
 
 import com.dreamStore.domain.product.ProductService
-import com.dreamStore.product.requstDTO.RegisterProductRequest
-import com.dreamStore.product.responseDTO.ProductResponse
+import com.dreamStore.product.requst.RegisterProductRequest
+import com.dreamStore.product.response.ProductResponse
 import org.springframework.web.bind.annotation.*
 
 @RestController
