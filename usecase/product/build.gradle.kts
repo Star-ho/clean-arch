@@ -35,7 +35,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.6.5")
     implementation("mysql:mysql-connector-java")
-
 }
 
 tasks.withType<KotlinCompile> {
