@@ -1,8 +1,8 @@
-package com.dreamStore.domain.member.data.adaptor.`in`
+package com.dreamStore.domain.product.data.adaptor.`in`
 
 import com.dreamStore.domain.product.adaptor.out.ProductRepositoryAdaptor
-import com.dreamStore.domain.member.data.ProductData
-import com.dreamStore.domain.member.data.ProductJPARepository
+import com.dreamStore.domain.product.data.ProductData
+import com.dreamStore.domain.product.data.ProductJPARepository
 import com.dreamStore.domain.product.dto.CreateProductDto
 import com.dreamStore.domain.product.dto.ProductDTO
 import org.springframework.stereotype.Component

@@ -1,4 +1,4 @@
-package com.dreamStore.domain.member.data
+package com.dreamStore.domain.product.data
 
 import com.dreamStore.domain.product.adaptor.out.ProductRepositoryAdaptor
 import org.springframework.data.jpa.repository.JpaRepository
