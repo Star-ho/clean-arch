@@ -1,9 +1,10 @@
 package com.dreamStore.domain.product
 
-import java.math.BigDecimal
+import com.dreamstore.common.Label
+import com.dreamstore.common.Price
 
 class Product(
     val id:Long=0,
-    val label:String,
-    val price:BigDecimal
+    val label: Label,
+    val price: Price
 )
