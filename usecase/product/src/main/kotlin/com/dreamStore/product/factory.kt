@@ -1,19 +1,17 @@
 package com.dreamStore.product
 
-import com.dreamStore.domain.product.adaptor.out.ProductRepositoryAdaptor
-import com.dreamStore.domain.product.dto.CreateProductDto
-import com.dreamStore.domain.product.dto.ProductDTO
+import com.dreamStore.product.adaptor.out.ProductRepositoryAdaptor
 import org.springframework.stereotype.Component
 
 @Component
 class ProductFactory(
-    private val productRepository:ProductRepositoryAdaptor
+    private val productRepository: ProductRepositoryAdaptor
 ) {
-    fun getProduct(id:Long): ProductDTO? {
+    fun getProduct(id:Long): Product? {
         return productRepository.findById(id)
     }
 
-    fun registerProduct(createProductDto: CreateProductDto){
-        productRepository.save(createProductDto)
+    fun registerProduct(product: Product){
+        productRepository.save(product)
     }
 }
