@@ -25,9 +25,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain:product"))
-    implementation("org.springframework.boot:spring-boot-starter-data-jdbc:2.6.5")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.5")
+    api(project(":domain:product"))
     implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.5")
     implementation("org.springframework.boot:spring-boot-starter-web:2.6.5")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2")

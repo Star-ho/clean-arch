@@ -25,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain:product"))
+    api(project(":domain:member"))
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc:2.6.5")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.5")
     implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.5")
