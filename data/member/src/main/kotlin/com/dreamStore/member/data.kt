@@ -1,12 +1,11 @@
 package com.dreamStore.member
 
 import com.dreamStore.base.CommonEntity
-import com.dreamStore.domain.member.dto.CreateMemberDto
-import com.dreamStore.domain.member.dto.MemberDTO
+import com.dreamstore.member.Member
 import javax.persistence.*
 
 @Entity
-@Table(name = "MEMEBER")
+@Table(name = "MEMBER")
 class MemberData (
     @Column(name="MEMBER_ID")
     val memberId:String,
