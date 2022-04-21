@@ -20,6 +20,10 @@ repositories {
 dependencies {
     implementation(project(":usecase:product"))
     implementation(project(":data:product"))
+    implementation(project(":usecase:member"))
+    implementation(project(":data:member"))
+    implementation(project(":usecase:order"))
+    implementation(project(":data:order"))
     implementation("org.springframework.boot:spring-boot-starter-web:2.6.5")
     implementation("org.springdoc:springdoc-openapi-data-rest:1.6.6")
     implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
