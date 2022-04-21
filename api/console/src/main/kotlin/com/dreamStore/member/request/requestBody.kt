@@ -1,11 +1,12 @@
 package com.dreamStore.member.request
 
-import com.dreamStore.domain.member.dto.CreateMemberDto
+import com.dreamStore.member.dto.CreateMemberDto
+import com.dreamstore.member.Member
 
 class RegisterMemberRequest(
     val memberId:String,
     val password:String,
     val email:String,
 ){
-    fun toDto()= CreateMemberDto(memberId, password, email)
+    fun toEntity() = Member(memberId, password, email)
 }

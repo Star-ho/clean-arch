@@ -1,4 +1,4 @@
-package com.dreamStore.domain.member.dto
+package com.dreamStore.member.dto
 
 class CreateMemberDto(
     val memberId:String,
