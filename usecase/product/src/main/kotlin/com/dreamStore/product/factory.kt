@@ -1,4 +1,4 @@
-package com.dreamStore.domain.product
+package com.dreamStore.product
 
 import com.dreamStore.domain.product.adaptor.out.ProductRepositoryAdaptor
 import com.dreamStore.domain.product.dto.CreateProductDto

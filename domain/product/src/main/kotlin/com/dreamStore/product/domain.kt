@@ -1,4 +1,4 @@
-package com.dreamStore.domain.product
+package com.dreamStore.product
 
 import com.dreamstore.common.Label
 import com.dreamstore.common.Price

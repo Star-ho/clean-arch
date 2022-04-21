@@ -1,4 +1,4 @@
-package com.dreamStore.domain.product.data
+package com.dreamStore.member
 
 import com.dreamStore.base.CommonEntity
 import com.dreamStore.domain.member.dto.CreateMemberDto

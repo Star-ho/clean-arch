@@ -1,4 +1,4 @@
-package com.dreamStore.domain.member.adaptor.out
+package com.dreamStore.member.adaptor.out
 
 import com.dreamStore.domain.member.dto.CreateMemberDto
 import com.dreamStore.domain.member.dto.MemberDTO
