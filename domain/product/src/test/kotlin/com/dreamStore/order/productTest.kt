@@ -1,6 +1,8 @@
-package com.dreamStore.domain
+package com.dreamStore.order
 
-import com.dreamStore.domain.product.Product
+import com.dreamStore.product.Product
+import com.dreamstore.common.Label
+import com.dreamstore.common.Price
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import java.math.BigDecimal
@@ -11,8 +13,8 @@ class ProductTest{
     fun createProductTest(){
         val id = 0L
         val label = "productLabel"
-        val price = BigDecimal(1000)
-        val product = Product(id,label,price)
+        val price = 1000
+        val product = Product(id, Label(label), Price(price))
 
         assertEquals(id,product.id)
         assertEquals(label,product.label)
@@ -23,8 +25,8 @@ class ProductTest{
     @Test
     fun createNoIdProductTest(){
         val label = "productLabel"
-        val price = BigDecimal(1000)
-        val product = Product(label = label,price = price)
+        val price = 1000
+        val product = Product(label = Label(label),price = Price(price))
 
         assertEquals(label,product.label)
         assertEquals(price,product.price)
