@@ -10,15 +10,15 @@ import javax.persistence.*
 @Table(name = "PRODUCT")
 class ProductData (
     @Column(name="LABEL")
-    val label:String="",
+    val label:String,
     @Column(name="PRICE")
-    val price:BigDecimal= BigDecimal.ZERO
+    val price:Int,
 ): CommonEntity(){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long=0
 
-    constructor(createProductDto: CreateProductDto):this(createProductDto.label,createProductDto.price)
+    constructor(product: Product):this(product.label.label, product.price.price)
 
     fun toDTO():ProductDTO{
         return ProductDTO(id, label, price)

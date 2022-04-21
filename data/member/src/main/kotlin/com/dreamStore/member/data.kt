@@ -19,8 +19,8 @@ class MemberData (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long=0
 
-    constructor(createMemberDto: CreateMemberDto):this(createMemberDto.memberId,createMemberDto.password,
-                                                    createMemberDto.email)
+    constructor(member: Member):this(member.memberId,member.password,
+                                                    member.email)
 
     fun toDTO(): MemberDTO {
         return MemberDTO(id, memberId, password, email)
