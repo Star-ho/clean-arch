@@ -1,7 +1,5 @@
 package com.dreamstore.common
 
-import java.math.BigDecimal
-
 class Price(price: Int) {
     val price:BigDecimal
     init {

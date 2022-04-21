@@ -1,9 +1,8 @@
 package com.dreamStore.product
 
 import com.dreamStore.base.CommonEntity
-import com.dreamStore.domain.product.dto.CreateProductDto
-import com.dreamStore.domain.product.dto.ProductDTO
-import java.math.BigDecimal
+import com.dreamstore.common.Label
+import com.dreamstore.common.Price
 import javax.persistence.*
 
 @Entity

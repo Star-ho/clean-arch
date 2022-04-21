@@ -1,6 +1,5 @@
 package com.dreamStore.member
 
-import com.dreamStore.domain.member.MemberService
 import com.dreamStore.member.request.RegisterMemberRequest
 import org.springframework.web.bind.annotation.*
 
