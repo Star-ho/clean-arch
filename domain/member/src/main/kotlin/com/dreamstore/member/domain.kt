@@ -5,4 +5,6 @@ class Member(
     val memberId:String,
     val password:String,
     val email:String,
-)
+){
+    constructor(memberId: String,password: String,email: String):this(null,memberId,password,email)
+}
