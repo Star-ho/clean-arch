@@ -22,7 +22,7 @@ class MemberData (
     constructor(member: Member):this(member.memberId,member.password,
                                                     member.email)
 
-    fun toDTO(): MemberDTO {
-        return MemberDTO(id, memberId, password, email)
+    fun toEntity(): Member {
+        return Member(id, memberId, password, email)
     }
 }

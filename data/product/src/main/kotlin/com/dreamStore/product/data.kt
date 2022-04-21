@@ -20,7 +20,7 @@ class ProductData (
 
     constructor(product: Product):this(product.label.label, product.price.price)
 
-    fun toDTO():ProductDTO{
-        return ProductDTO(id, label, price)
+    fun toEntity() : Product{
+        return Product(label = Label(label),price = Price(price))
     }
 }
