@@ -10,7 +10,7 @@ class MemberData (
     @Id
     val memberId:String = "",
     @Column(name="PASSWORD")
-    val password:String,
+    val password:String = "",
     @Column(name="EMAIL")
     val email:String="",
 ): CommonEntity(){
@@ -19,6 +19,6 @@ class MemberData (
                                                     member.email)
 
     fun toEntity(): Member {
-        return Member(id, memberId, password, email)
+        return Member(memberId, password, email)
     }
 }
