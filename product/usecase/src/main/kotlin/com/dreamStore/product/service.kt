@@ -12,6 +12,8 @@ class ProductService(
     fun getProductList(): List<Product> {
         return productRepositoryAdaptor.findAll()
 
+    fun getProduct(id:Long): Product {
+        return productRepository.findById(id)!!
     }
     fun registerProduct(createProductDto: CreateProductDto){
         productFactory.registerProduct(createProductDto.toEntity())
