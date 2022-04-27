@@ -14,7 +14,7 @@ class MemberRepository(
         return memberJPARepository.findAll().map { it.toEntity() }
     }
 
-    override fun findById(id: Long): Member? {
+    override fun findById(id: String): Member? {
         return memberJPARepository.findById(id).get().toEntity()
     }
 

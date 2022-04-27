@@ -4,6 +4,6 @@ import com.dreamstore.member.Member
 
 interface MemberRepositoryAdaptor{
     fun findAll():List<Member>
-    fun findById(id:Long): Member?
+    fun findById(id:String): Member?
     fun save(member: Member)
 }

@@ -7,8 +7,8 @@ import javax.persistence.*
 @Entity
 @Table(name = "MEMBER")
 class MemberData (
-    @Column(name="MEMBER_ID")
-    val memberId:String,
+    @Id
+    val memberId:String = "",
     @Column(name="PASSWORD")
     val password:String,
     @Column(name="EMAIL")
