@@ -7,14 +7,16 @@ import org.springframework.stereotype.Component
 @Component
 class ProductService(
     private val productFactory: ProductFactory,
-    private val productRepositoryAdaptor: ProductRepositoryAdaptor,
+    private val productRepository: ProductRepositoryAdaptor,
 ) {
     fun getProductList(): List<Product> {
-        return productRepositoryAdaptor.findAll()
+        return productRepository.findAll()
+    }
 
     fun getProduct(id:Long): Product {
         return productRepository.findById(id)!!
     }
+
     fun registerProduct(createProductDto: CreateProductDto){
         productFactory.registerProduct(createProductDto.toEntity())
     }
