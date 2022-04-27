@@ -7,37 +7,53 @@ import com.dreamstore.common.Price
 import javax.persistence.*
 
 @Entity
-@Table(name = "Order")
+@Table(name = "`ORDER`")
 class OrderData (
-    @Column(name="Member")
-    val label:String="",
-    @Column(name="PRICE")
-    val price: Int,
+    @Column(name="TOTAL_PRICE")
+    val totalPrice: Int = 0,
+
     @ManyToOne
-    val member: MemberData,
-    @OneToMany
-    val orderEntryList:List<OrderEntryData> = mutableListOf()
+    @JoinColumn(name="MEMBER_ID")
+    val member: MemberData = MemberData(),
+
+    @OneToMany(fetch = FetchType.LAZY)
+    var orderEntryList:MutableList<OrderEntryData> = mutableListOf()
 ): CommonEntity(){
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long=0
+
+    fun addOrderEntries(orderEntries : MutableList<OrderEntryData>){
+        orderEntryList=orderEntries
+        orderEntries.forEach { it.order=this }
+    }
 }
 
 @Entity
-@Table(name = "OrderEntry")
+@Table(name = "ORDER_ENTRY")
 class OrderEntryData (
     @ManyToOne
+    @JoinColumn(name="PRODUCT_ID")
     val product: ProductData,
+
     @ManyToOne
-    val order: OrderData,
+    @JoinColumn(name="OREDER_ID")
+    var order:OrderData = OrderData(),
+
     @Column(name="PRICE")
     val price: Int,
-): CommonEntity(){
+
+    @Column(name="QUANTITY")
+    val quantity: Int,
+
+    ): CommonEntity(){
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long=0
 
     fun toEntity(): OrderEntry {
-        return OrderEntry(price = Price(price),product = product.toEntity())
+        return OrderEntry(price = Price(price),product = product.toEntity(),quantity = Quantity(quantity))
     }
 }
