@@ -1,6 +1,6 @@
 package com.dreamStore.product
 
-import com.dreamStore.product.requst.RegisterProductRequest
+import com.dreamStore.product.request.RegisterProductRequest
 import com.dreamStore.product.response.ProductResponse
 import org.springframework.web.bind.annotation.*
 
