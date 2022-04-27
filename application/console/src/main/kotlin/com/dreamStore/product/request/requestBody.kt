@@ -1,4 +1,4 @@
-package com.dreamStore.product.requst
+package com.dreamStore.product.request
 
 import com.dreamStore.product.dto.CreateProductDto
 import java.math.BigDecimal
