@@ -10,6 +10,6 @@ class MemberController(
 ) {
     @PostMapping
     fun registerProduct(@RequestBody registerMemberRequest: RegisterMemberRequest){
-        return memberService.registerProduct(registerMemberRequest.toEntity())
+        return memberService.registerMember(registerMemberRequest.toEntity())
     }
 }
