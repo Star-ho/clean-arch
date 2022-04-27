@@ -15,4 +15,13 @@ class OrderEntry(
     val id:Long = 0L,
     val price : Price,
     val product : Product,
+    val quantity: Quantity,
 )
+
+class Quantity(
+    val value:Int,
+){
+    init {
+        if(value<=0) throw IllegalArgumentException()
+    }
+}
