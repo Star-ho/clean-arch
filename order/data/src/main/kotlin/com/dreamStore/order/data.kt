@@ -14,10 +14,10 @@ class OrderData (
 
     @ManyToOne
     @JoinColumn(name="MEMBER_ID")
-    val member: MemberData = MemberData(),
+    val member: MemberData,
 
     @OneToMany(fetch = FetchType.LAZY)
-    var orderEntryList:MutableList<OrderEntryData> = mutableListOf()
+    var orderEntryList:MutableList<OrderEntryData> = mutableListOf(),
 ): CommonEntity(){
 
     @Id
