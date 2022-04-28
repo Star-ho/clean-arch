@@ -6,7 +6,7 @@ import com.dreamstore.member.Member
 
 class Order(
     val id :Long = 0L,
-    val totalPrice : Price,
+    val totalPrice : Price = Price(0),
     val member : Member,
     val orderEntryList : List<OrderEntry> = mutableListOf()
 )
