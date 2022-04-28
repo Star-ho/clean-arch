@@ -15,26 +15,20 @@ class OrderRepository(
     private val orderEntryJPARepository: OrderEntryJPARepository
 ): OrderRepositoryAdaptor {
     override fun findAll(): List<Order> {
-        orderJpaRepository.findAll().forEach{it.orderEntryList.forEach{ println("!!!!!!!");println(it.product)}}
         return orderJpaRepository.findAll().map { Order(it.id, Price(it.totalPrice),it.member.toEntity(),
             it.orderEntryList.map { e -> e.toEntity() }) }
     }
 
     override fun save(order: Order) {
+        val orderEntryDataList = order.orderEntryList.map{
+            orderEntryJPARepository.save(OrderEntryData( product = productJPARepository.findById(it.product.id).get(),
+            price = it.price.value, quantity = it.quantity.value)) }
 
-        val orderEntries = order.orderEntryList.map{ OrderEntryData( product = productJPARepository.findById(it.product.id).get(),
-            price = it.price.value, quantity = it.quantity.value) }
+        val orderData = OrderData(member = memberJPARepository.findById(order.member.memberId).orElseThrow(),
+            totalPrice = order.totalPrice.value)
 
-        val order = orderJpaRepository.save(OrderData(member = memberJPARepository.findById(order.member.memberId).get(),totalPrice = order.totalPrice.value))
-
-        val a = orderEntries.map {
-            it.order=order
-            orderEntryJPARepository.save(it)
-        }
-
-        order.addOrderEntries(a as MutableList<OrderEntryData>)
-
-        orderJpaRepository.save(order)
+        orderData.addOrderEntries(orderEntryDataList as MutableList<OrderEntryData>)
+        orderJpaRepository.save(orderData)
 
     }
 }
