@@ -8,9 +8,9 @@ import javax.persistence.*
 @Table(name = "MEMBER")
 class MemberData (
     @Id
-    val memberId:String = "",
+    val memberId:String,
     @Column(name="PASSWORD")
-    val password:String = "",
+    val password:String,
     @Column(name="EMAIL")
     val email:String="",
 ): CommonEntity(){
