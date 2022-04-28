@@ -37,10 +37,6 @@ class OrderEntryData (
     @JoinColumn(name="PRODUCT_ID")
     val product: ProductData,
 
-    @ManyToOne
-    @JoinColumn(name="OREDER_ID")
-    var order:OrderData = OrderData(),
-
     @Column(name="PRICE")
     val price: Int,
 
@@ -52,6 +48,10 @@ class OrderEntryData (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long=0
+
+    @ManyToOne
+    @JoinColumn(name="OREDER_ID")
+    var order:OrderData?=null
 
     fun toEntity(): OrderEntry {
         return OrderEntry(price = Price(price),product = product.toEntity(),quantity = Quantity(quantity))
