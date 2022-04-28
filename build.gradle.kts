@@ -5,15 +5,3 @@ plugins {
     kotlin("plugin.spring") version "1.6.10" apply false
     kotlin("plugin.jpa") version "1.6.10" apply false
 }
-
-//allprojects{
-//    buildDir = File(rootProject.projectDir, "build/" + project.name)
-//
-//    tasks.findByName("bootJar")?.apply {
-//        enabled = true
-//    }
-//
-//    tasks.findByName("jar")?.apply {
-//        enabled = true
-//    }
-//}
