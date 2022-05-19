@@ -5,3 +5,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface OrderJPARepository : JpaRepository<OrderData, Long>
+
+@Repository
+interface OrderEntryJPARepository : JpaRepository<OrderEntryData,Long>

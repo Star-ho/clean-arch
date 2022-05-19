@@ -6,15 +6,18 @@ import org.springframework.stereotype.Component
 
 @Component
 class MemberService(
-    private val memberFactory: MemberFactory,
-    private val memberRepositoryAdaptor: MemberRepositoryAdaptor,
+    private val memberRepository: MemberRepositoryAdaptor,
 ) {
 
-    fun getProductList(): List<Member> {
-        return memberRepositoryAdaptor.findAll()
+    fun getMemberList(): List<Member> {
+        return memberRepository.findAll()
     }
 
-    fun registerProduct(member: Member){
-        memberFactory.registerProduct(member)
+    fun getMember(memberId : String): Member {
+        return memberRepository.findById(memberId)?:throw IllegalArgumentException("해당 멤버가 없습니다")
+    }
+
+    fun registerMember(member: Member){
+        memberRepository.save(member)
     }
 }

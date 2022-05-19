@@ -4,4 +4,5 @@ import com.dreamStore.order.Order
 
 interface OrderRepositoryAdaptor {
     fun findAll(): List<Order>
+    fun save(order: Order)
 }

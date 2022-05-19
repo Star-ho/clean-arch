@@ -4,6 +4,6 @@ import com.dreamStore.product.Product
 
 class ProductResponse(product: Product){
     val id=product.id
-    val label=product.label
-    val price=product.price
+    val label=product.label.value
+    val price=product.price.value
 }
