@@ -3,13 +3,13 @@ package com.dreamStore.product
 import com.dreamstore.common.Label
 import com.dreamstore.common.Price
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.ninjasquad.springmockk.MockkBean
+import io.mockk.every
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.BDDMockito.given
 import org.mockito.junit.jupiter.MockitoExtension
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
-import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPat
 @ExtendWith(MockitoExtension::class)
 @WebMvcTest(ProductController::class)
 internal class ProductControllerTest {
-    @MockBean
+    @MockkBean
     lateinit var productService: ProductService
 
     @Autowired
@@ -33,7 +33,7 @@ internal class ProductControllerTest {
             Product(id = 1, label = Label("testLabel1"), price= Price(1000)),
             Product(id = 2, label = Label("testLabel2"), price= Price(2000))
         )
-        given(productService.getProductList()).willReturn(products)
+        every { productService.getProductList() } returns products
 
         mockMvc.perform(
             MockMvcRequestBuilders.get("/product")
@@ -48,5 +48,6 @@ internal class ProductControllerTest {
 
     @Test
     fun registerProduct() {
+        throw IllegalArgumentException("fff")
     }
 }
