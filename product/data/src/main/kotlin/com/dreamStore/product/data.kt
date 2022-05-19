@@ -17,7 +17,7 @@ class ProductData (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long=0
 
-    constructor(product: Product):this(product.label.label, product.price.value)
+    constructor(product: Product):this(product.label.value, product.price.value)
 
     fun toEntity() : Product{
         return Product(id=id ,label = Label(label),price = Price(price))
