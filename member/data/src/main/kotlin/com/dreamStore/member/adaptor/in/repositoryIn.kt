@@ -22,4 +22,8 @@ class MemberRepository(
         memberJPARepository.save(MemberData(member))
     }
 
+    override fun existsById(memberId: String): Boolean {
+        return memberJPARepository.existsById(memberId)
+    }
+
 }
