@@ -14,7 +14,11 @@ repositories {
 
 dependencies{
     api(project(":common:domain"))
+
+    testImplementation("io.kotest:kotest-runner-junit5:5.2.3")
+    testImplementation("io.kotest:kotest-assertions-core:5.2.3")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.6.5")
 }
 
 tasks.withType<KotlinCompile> {
