@@ -30,6 +30,8 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
     implementation("org.springdoc:springdoc-openapi-kotlin:1.6.6")
 
+    implementation("org.springframework.boot:spring-boot-starter-security:2.7.0")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.6.5")
     testImplementation("io.kotest:kotest-runner-junit5:5.2.3")
     testImplementation("io.kotest:kotest-assertions-core:5.2.3")
