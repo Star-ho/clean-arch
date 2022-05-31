@@ -28,6 +28,10 @@ class OrderData (
         orderEntryList=orderEntries
         orderEntries.forEach { it.order=this }
     }
+
+    fun toEntity():Order{
+        return Order(id, Price(totalPrice), member.toEntity(), orderEntryList.map { e -> e.toEntity() })
+    }
 }
 
 @Entity
