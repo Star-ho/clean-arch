@@ -1,5 +1,7 @@
 package com.dreamStore.member
 
+import com.dreamStore.auth.AuthController
+import com.dreamStore.member.dto.CreateMemberDto
 import com.dreamstore.member.Member
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Test
@@ -16,7 +18,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @ExtendWith(MockitoExtension::class)
-@WebMvcTest(MemberController::class)
+@WebMvcTest(AuthController::class)
 class MemberControllerTest{
 
     @MockBean
@@ -30,7 +32,7 @@ class MemberControllerTest{
 
     @Test
     fun registerMemberTest(){
-        doNothing().`when`(memberService).registerMember(any(Member::class.java))
+        doNothing().`when`(memberService).registerMember(any(CreateMemberDto::class.java))
 
         val valueMap = mutableMapOf<String,String>()
         valueMap["memberId"] = "testMemberId"
