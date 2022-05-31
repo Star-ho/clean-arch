@@ -7,6 +7,7 @@ import com.dreamstore.member.Member
 import com.dreamstore.member.ROLE
 import org.springframework.dao.DuplicateKeyException
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
 import javax.naming.AuthenticationException
 
@@ -14,19 +15,9 @@ import javax.naming.AuthenticationException
 class MemberService(
     private val memberRepository: MemberRepositoryAdaptor,
     private val passwordEncoder:PasswordEncoderImpl,
-) {
+){
 
-    @Throws(AuthenticationException::class)
-    fun login(loginDto: LoginDto): UsernamePasswordAuthenticationToken {
-        val member = memberRepository.findById(loginDto.memberId) ?: throw AuthenticationException("아이디가 존재하지 않습니다.")
-
-        if(passwordEncoder.match(loginDto.password,member.password)){
-            return UsernamePasswordAuthenticationToken(member,member)
-        }
-        throw AuthenticationException("패스워드가 다릅니다.")
-    }
-
-    @Throws(DuplicateKeyException::class)
+   @Throws(DuplicateKeyException::class)
     fun registerMember(createMemberDto: CreateMemberDto){
         val exist = memberRepository.existsById(createMemberDto.memberId)
         if (exist) throw DuplicateKeyException("해당되는 아이디가 있습니다.")

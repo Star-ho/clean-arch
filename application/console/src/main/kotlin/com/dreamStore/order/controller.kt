@@ -14,6 +14,11 @@ class OrderController(
         return orderService.getOrders()
     }
 
+    @GetMapping("/{id}")
+    fun getOrders(@PathVariable id:Long): Order {
+        return orderService.getOrder(id)
+    }
+
     @PostMapping
     fun registerOrders(@RequestBody registerOrderDTO: RegisterOrderDTO): ResponseEntity<String> {
         orderService.registerOrder(registerOrderDTO)

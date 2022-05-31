@@ -22,9 +22,4 @@ class AuthController(
         return ResponseEntity.ok().build()
     }
 
-    @PostMapping("/login")
-    fun login(@RequestBody loginDto: LoginDto):ResponseEntity<Unit>{
-        memberService.login(loginDto)
-        return ResponseEntity.ok().build()
-    }
 }
