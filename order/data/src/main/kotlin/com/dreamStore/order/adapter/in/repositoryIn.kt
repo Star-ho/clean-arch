@@ -4,7 +4,6 @@ import com.dreamStore.member.MemberJPARepository
 import com.dreamStore.order.*
 import com.dreamStore.order.adaptor.out.OrderRepositoryAdaptor
 import com.dreamStore.product.ProductJPARepository
-import com.dreamstore.common.Price
 import org.springframework.stereotype.Component
 
 @Component
@@ -15,8 +14,11 @@ class OrderRepository(
     private val orderEntryJPARepository: OrderEntryJPARepository
 ): OrderRepositoryAdaptor {
     override fun findAll(): List<Order> {
-        return orderJpaRepository.findAll().map { Order(it.id, Price(it.totalPrice),it.member.toEntity(),
-            it.orderEntryList.map { e -> e.toEntity() }) }
+        return orderJpaRepository.findAll().map { it.toEntity() }
+    }
+
+    override fun findById(id: Long): Order {
+        return orderJpaRepository.findById(id).get().toEntity()
     }
 
     override fun save(order: Order) {
@@ -24,11 +26,10 @@ class OrderRepository(
             orderEntryJPARepository.save(OrderEntryData( product = productJPARepository.findById(it.product.id).get(),
             price = it.price.value, quantity = it.quantity.value)) }
 
-        val orderData = OrderData(member = memberJPARepository.findById(order.member.memberId).orElseThrow(),
+        val orderData = OrderData(member = memberJPARepository.findById(order.member.memberId.value).orElseThrow(),
             totalPrice = order.totalPrice.value)
 
         orderData.addOrderEntries(orderEntryDataList as MutableList<OrderEntryData>)
         orderJpaRepository.save(orderData)
-
     }
 }

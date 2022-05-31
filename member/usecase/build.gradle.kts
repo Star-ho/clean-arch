@@ -31,10 +31,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.5")
     implementation("org.springframework.boot:spring-boot-starter-web:2.6.5")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2")
-//    implementation("org.jetbrains.kotlin:kotlin-reflect:2.1.210")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.springframework.boot:spring-boot-starter-security:2.7.0")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.6.5")
-//    implementation("mysql:mysql-connector-java")
     testImplementation("io.kotest:kotest-runner-junit5:5.2.3")
     testImplementation("io.kotest:kotest-assertions-core:5.2.3")
     testImplementation("com.ninja-squad:springmockk:3.0.1")

@@ -1,7 +1,7 @@
 package com.dreamstore.member
 
+import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions.assertEquals
 
 
 class MemberTest{
@@ -11,11 +11,13 @@ class MemberTest{
         val memberId = "name"
         val password = "pass"
         val email = "tjdgh1231@dream.com"
-        val member = Member(memberId,password,email)
+        val role = ROLE.USER
+        val member = Member(memberId,password,email,role)
 
-        assertEquals(memberId,member.memberId)
-        assertEquals(password,member.password)
-        assertEquals(email,member.email)
+        memberId shouldBe  member.memberId.value
+        password shouldBe member.password
+        email shouldBe member.email.value
     }
+
 
 }

@@ -11,3 +11,8 @@ class MemberDTO( val id:Long=0,
                  val password: String,
                  val email: String){
 }
+
+class LoginDto(
+    val memberId:String,
+    val password:String,
+)
