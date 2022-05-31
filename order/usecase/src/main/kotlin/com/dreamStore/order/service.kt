@@ -17,6 +17,10 @@ class OrderService(
         return orderRepository.findAll()
     }
 
+    fun getOrder(id:Long):Order{
+        return orderRepository.findById(id)
+    }
+
     fun registerOrder(registerOrderDTO: RegisterOrderDTO){
         val orderEntryList = registerOrderDTO.products.map {
             val product = productService.getProduct(it.productId)
