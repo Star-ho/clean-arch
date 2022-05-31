@@ -18,8 +18,8 @@ class MemberData (
     val role:ROLE,
 ): CommonEntity(){
 
-    constructor(member: Member):this(member.memberId,member.password,
-                                                    member.email,member.role)
+    constructor(member: Member):this(member.memberId.value,member.password,
+                                                    member.email.value,member.role)
 
     fun toEntity(): Member {
         return Member(memberId, password, email,role)
