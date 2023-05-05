@@ -22,7 +22,7 @@ class Member(
         this.role = role
     }
 
-    fun encryptPassword(passwordEncoder: PasswordEncoderInterface) {
+    fun encryptPassword(passwordEncoder: PasswordEncoder) {
         password = passwordEncoder.encode(this.password)
     }
 }

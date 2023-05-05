@@ -1,15 +1,15 @@
 package com.hexagonal.member.adaptor.`in`
 
-import com.dreamStore.member.adaptor.out.MemberRepositoryAdaptor
-import com.dreamstore.member.Member
+import com.hexagonal.member.Member
 import com.hexagonal.member.MemberData
 import com.hexagonal.member.MemberJPARepository
+import com.hexagonal.member.adaptor.out.MemberRepository
 import org.springframework.stereotype.Component
 
 @Component
-class MemberRepository(
+class MemberRepositoryImpl(
     private val memberJPARepository: MemberJPARepository
-) : MemberRepositoryAdaptor {
+) : MemberRepository {
     override fun findAll(): List<Member> {
         return memberJPARepository.findAll().map { it.toEntity() }
     }

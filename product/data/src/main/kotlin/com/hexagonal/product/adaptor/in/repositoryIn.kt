@@ -1,12 +1,13 @@
 package com.hexagonal.product.adaptor.`in`
 
-import com.dreamStore.product.Product
+import com.hexagonal.product.Product
 import com.hexagonal.product.ProductData
 import com.hexagonal.product.ProductJPARepository
+import com.hexagonal.product.adaptor.out.ProductRepository
 import org.springframework.stereotype.Component
 
 @Component
-class ProductRepository(
+class ProductRepositoryImpl(
     private val productJPARepository: ProductJPARepository,
 ) : ProductRepository {
     override fun findAll(): List<Product> {

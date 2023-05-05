@@ -1,8 +1,9 @@
 package com.hexagonal.member.adaptor.out
 
-import com.dreamstore.member.Member
+import com.hexagonal.member.Member
 
-interface MemberRepositoryAdaptor {
+
+interface MemberRepository {
     fun findAll(): List<Member>
     fun findById(id: String): Member?
     fun save(member: Member)

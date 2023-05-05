@@ -2,9 +2,7 @@ package com.hexagonal.product
 
 import com.hexagonal.product.adaptor.out.ProductRepository
 import com.hexagonal.product.dto.CreateProductDto
-import org.springframework.stereotype.Component
 
-@Component
 class ProductService(
     private val productFactory: ProductFactory,
     private val productRepository: ProductRepository,

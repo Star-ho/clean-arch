@@ -1,9 +1,10 @@
 package com.hexagonal.member
 
-import com.dreamstore.member.Member
-import com.dreamstore.member.ROLE
 import com.hexagonal.base.CommonEntity
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.Table
 
 @Entity
 @Table(name = "MEMBER")

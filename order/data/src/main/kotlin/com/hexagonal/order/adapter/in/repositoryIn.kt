@@ -1,22 +1,18 @@
 package com.hexagonal.order.adapter.`in`
 
-import com.dreamStore.order.*
-import com.dreamStore.order.adaptor.out.OrderRepositoryAdaptor
 import com.hexagonal.member.MemberJPARepository
-import com.hexagonal.order.OrderData
-import com.hexagonal.order.OrderEntryData
-import com.hexagonal.order.OrderEntryJPARepository
-import com.hexagonal.order.OrderJPARepository
+import com.hexagonal.order.*
+import com.hexagonal.order.adaptor.out.OrderRepository
 import com.hexagonal.product.ProductJPARepository
-import org.springframework.stereotype.Component
+import org.springframework.stereotype.Repository
 
-@Component
-class OrderRepository(
+@Repository
+class OrderRepositoryImpl(
     private val orderJpaRepository: OrderJPARepository,
     private val productJPARepository: ProductJPARepository,
     private val memberJPARepository: MemberJPARepository,
     private val orderEntryJPARepository: OrderEntryJPARepository
-) : OrderRepositoryAdaptor {
+) : OrderRepository {
     override fun findAll(): List<Order> {
         return orderJpaRepository.findAll().map { it.toEntity() }
     }

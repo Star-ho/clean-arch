@@ -1,11 +1,12 @@
 package com.hexagonal.order
 
+import com.hexagonal.member.Member
+import com.hexagonal.member.ROLE
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 
 
 class MemberTest {
-
     @Test
     fun createMemberTest() {
         val memberId = "name"
@@ -18,6 +19,4 @@ class MemberTest {
         password shouldBe member.password
         email shouldBe member.email.value
     }
-
-
 }

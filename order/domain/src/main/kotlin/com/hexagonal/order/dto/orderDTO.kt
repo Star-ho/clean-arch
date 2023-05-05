@@ -1,6 +1,6 @@
 package com.hexagonal.order.dto
 
-class RegisterOrderDTO(
+class RegisterOrderRequest(
     val memberId: String,
     val products: List<CreateOrderEntryRequest>,
 )

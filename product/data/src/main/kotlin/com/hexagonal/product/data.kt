@@ -1,8 +1,8 @@
 package com.hexagonal.product
 
-import com.dreamstore.common.Label
-import com.dreamstore.common.Price
 import com.hexagonal.base.CommonEntity
+import com.hexagonal.common.Label
+import com.hexagonal.common.Price
 import javax.persistence.*
 
 @Entity

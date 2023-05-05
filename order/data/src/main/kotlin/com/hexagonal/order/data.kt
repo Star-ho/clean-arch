@@ -1,7 +1,7 @@
 package com.hexagonal.order
 
-import com.dreamstore.common.Price
 import com.hexagonal.base.CommonEntity
+import com.hexagonal.common.Price
 import com.hexagonal.member.MemberData
 import com.hexagonal.product.ProductData
 import javax.persistence.*

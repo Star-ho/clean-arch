@@ -1,8 +1,8 @@
 package com.hexagonal.order
 
-import com.dreamStore.product.Product
-import com.dreamstore.common.Price
-import com.dreamstore.member.Member
+import com.hexagonal.common.Price
+import com.hexagonal.member.Member
+import com.hexagonal.product.Product
 
 class Order(
     val id: Long = 0L,

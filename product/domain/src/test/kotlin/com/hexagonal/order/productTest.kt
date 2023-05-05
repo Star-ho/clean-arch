@@ -1,7 +1,7 @@
 package com.hexagonal.order
 
-import com.dreamstore.common.Label
-import com.dreamstore.common.Price
+import com.hexagonal.common.Label
+import com.hexagonal.common.Price
 import com.hexagonal.product.Product
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

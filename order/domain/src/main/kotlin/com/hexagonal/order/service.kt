@@ -1,26 +1,22 @@
 package com.hexagonal.order
 
-import com.dreamStore.member.MemberService
-import com.dreamStore.product.ProductService
-import com.hexagonal.order.adaptor.out.OrderRepositoryAdaptor
-import com.hexagonal.order.dto.RegisterOrderDTO
-import org.springframework.stereotype.Component
+import com.hexagonal.order.adaptor.out.OrderRepository
+import com.hexagonal.order.dto.RegisterOrderRequest
 
-@Component
+
 class OrderService(
-    private val orderRepository: OrderRepositoryAdaptor,
-    private val productService: ProductService,
-    private val memberService: MemberService,
+    private val orderRepository: OrderRepository,
+    private val orderFactory: OrderFactory,
 ) {
     fun getOrders(): List<Order> {
         return orderRepository.findAll()
     }
 
     fun getOrder(id: Long): Order {
-        return orderRepository.findById(id)
+        return orderRepository.findById(id) ?: throw IllegalArgumentException("주문을 찾을 수 없습니다")
     }
 
-    fun registerOrder(registerOrderDTO: RegisterOrderDTO) {
-
+    fun registerOrder(registerOrderRequest: RegisterOrderRequest) {
+        orderFactory.createOrder(registerOrderRequest)
     }
 }
