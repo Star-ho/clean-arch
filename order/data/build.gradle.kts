@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 // 루트 모듈에서 plugin 버전지정 하위모듈에선 버전지정 X
 
 plugins {

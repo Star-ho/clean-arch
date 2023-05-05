@@ -1,31 +1,19 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-// 루트 모듈에서 plugin 버전지정 하위모듈에선 버전지정 X
-
 plugins {
     kotlin("jvm")
 }
-
-java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
 }
 
-dependencies{
-    api(project(":common:domain"))
-    api(project(":member:domain"))
-    api(project(":product:domain"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
-    }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
+dependencies {
+    api(project(":order:domain"))
+    implementation(project(":member:usecase"))
+    implementation(project(":product:usecase"))
+    implementation("org.springframework.boot:spring-boot-starter-data-jdbc:2.6.5")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.5")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.6.5")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.6.5")
 }
