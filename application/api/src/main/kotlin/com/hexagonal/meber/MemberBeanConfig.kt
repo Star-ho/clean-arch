@@ -10,9 +10,9 @@ import org.springframework.context.annotation.Configuration
 class MemberBeanConfig(
     private val memberRepository: MemberRepository,
     private val passwordEncoder: PasswordEncoder,
-){
+) {
     @Bean
     fun memberService(): MemberService {
-        return MemberService(memberRepository,passwordEncoder)
+        return MemberService(memberRepository, passwordEncoder)
     }
 }

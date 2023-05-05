@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class ProductBeanConfig(
-    private val productRepository:ProductRepository
+    private val productRepository: ProductRepository
 ) {
     @Bean
     fun productService(): ProductService {
-        return ProductService(productFactory(),productRepository)
+        return ProductService(productFactory(), productRepository)
     }
 
     @Bean

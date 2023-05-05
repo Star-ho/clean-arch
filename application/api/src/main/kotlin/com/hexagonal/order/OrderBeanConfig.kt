@@ -11,10 +11,10 @@ class OrderBeanConfig(
     private val orderRepository: OrderRepository,
     private val productRepository: ProductRepository,
     private val memberRepository: MemberRepository,
-){
+) {
     @Bean
     fun orderService(): OrderService {
-        return OrderService(orderRepository,orderFactory())
+        return OrderService(orderRepository, orderFactory())
     }
 
     @Bean

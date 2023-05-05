@@ -5,7 +5,7 @@ plugins {
     kotlin("plugin.spring")
 }
 
-dependencies{
+dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.kotest:kotest-runner-junit5:${rootProject.extra.get("kotest-version")}")
     testImplementation("io.kotest:kotest-assertions-core:${rootProject.extra.get("kotest-version")}")
